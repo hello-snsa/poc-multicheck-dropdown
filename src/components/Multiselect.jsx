@@ -27,7 +27,19 @@ export default function Multiselect() {
     <div>
       <div className="multiSelectBox">
         <input placeholder="Select data type" value={dataValue} disabled />
-
+        <div>
+    <div className="checkboxContainer">
+        {names.map((name) => (
+          <MultiSelectCheckbox
+          key={uuid()}
+          name={name}
+          isChecked={dataValue.indexOf(name) > -1}
+          dataValue={dataValue}
+          setDataValue={setDataValue}
+          />
+          ))}
+          </div>
+    <div className="selectContainer">
         <select
           id="multiCheckbox"
           name="multiCheckbox"
@@ -37,23 +49,16 @@ export default function Multiselect() {
           multiple
           value={dataValue}
           onChange={handleChange}
-        >
+          >
           {names.map((name) => (
-            <option key={name} value={name}>
+            <option key={name} value={name} className="optionContainer">
               {name}
             </option>
           ))}
         </select>
-
-        {names.map((name) => (
-          <MultiSelectCheckbox
-            key={uuid()}
-            name={name}
-            isChecked={dataValue.indexOf(name) > -1}
-            dataValue={dataValue}
-            setDataValue={setDataValue}
-          />
-        ))}
+</div>
+          </div>
+        
       </div>
     </div>
   );

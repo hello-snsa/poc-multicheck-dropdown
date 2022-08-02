@@ -8,16 +8,40 @@ display: inline-block;
 .myMultiSelect {
   display: none;
   position: absolute;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  padding: 12px 16px;
-  z-index: 1;
+  /* min-width: 160px; */
+  /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+  padding: 10px 16px;
+  /* z-index: 1; */
+  border: 0ch;
 }
-.multiSelectBox:hover .myMultiSelect {
+.optionContainer{
+  margin-top:0.05rem;
+  margin-left:0.2rem;
+}
+.multiSelectBox:hover .myMultiSelect{
   display: block;
+  background-color: transparent;
+}
+.multiSelectBox:hover .checkboxContainer{
+  display:flex;
+  flex-direction: column;
+  background-color: transparent;
 }
 
+.checkboxContainer{
+  display: none;
+  position: absolute;
+  float:left;
+  z-index:100;
+  margin-top: 0.6rem;
+  align-items: center;
+  justify-content: center;
+}
 
+.selectContainer,.myMultiSelect{
+  /* z-index: 1; */
+  /* clear: both; */
+}
 
 
 
